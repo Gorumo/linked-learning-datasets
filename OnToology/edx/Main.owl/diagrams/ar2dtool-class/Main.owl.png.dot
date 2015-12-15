@@ -1,0 +1,49 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "Main:Person" "Main:Problem" "Main:Course" "Main:Subsections" "http://linkedscience.org/teach/ns#Teacher" "http://purl.org/vocab/aiiso/schema#Course" "Main:Student" "Main:Sections" "Main:Teacher" "http://xmlns.com/foaf/0.1/Person" "Main:Video" "http://linkedscience.org/teach/ns#Material" "http://linkedscience.org/teach/ns#Student" "Main:Assignment" "http://linkedscience.org/teach/ns#Assignment" "Main:Staff" "Main:Material" "http://linkedscience.org/teach/ns#Course" "Main:Discussion" "Main:HTML" ; /*classes style*/
+	"http://linkedscience.org/teach/ns#Teacher" -> "Main:Teacher" [ label = "owl:equivalentClass" ];
+	"http://linkedscience.org/teach/ns#Assignment" -> "Main:Assignment" [ label = "owl:equivalentClass" ];
+	"http://purl.org/vocab/aiiso/schema#Course" -> "Main:Course" [ label = "owl:equivalentClass" ];
+	"http://linkedscience.org/teach/ns#Course" -> "Main:Course" [ label = "owl:equivalentClass" ];
+	"Main:Person" -> "http://xmlns.com/foaf/0.1/Person" [ label = "owl:equivalentClass" ];
+	"http://linkedscience.org/teach/ns#deadline" -> "Main:dueDate" [ label = "owl:equivalentProperty" ];
+	"http://linkedscience.org/teach/ns#Student" -> "Main:Student" [ label = "owl:equivalentClass" ];
+	"http://linkedscience.org/teach/ns#Material" -> "Main:Material" [ label = "owl:equivalentClass" ];
+	"http://linkedscience.org/teach/ns#weeklyHours" -> "Main:hoursPerWeek" [ label = "owl:equivalentProperty" ];
+	"Main:Teacher" -> "Main:Course" [ label = "Main:creates" ];
+	"Main:Assignment" -> "xsd:int" [ label = "Main:tasks" ];
+	"Main:Staff" -> "Main:Course" [ label = "Main:support" ];
+	"Main:HTML" -> "xsd:string" [ label = "Main:content" ];
+	"Main:Discussion" -> "xsd:string" [ label = "Main:discussionAbout" ];
+	"Main:Course" -> "Main:Student" [ label = "Main:isTakenBy" ];
+	"Main:Course" -> "Main:Sections" [ label = "Main:consistsOf" ];
+	"Main:Sections" -> "xsd:boolean" [ label = "Main:visibility" ];
+	"Main:Material" -> "Main:Course" [ label = "Main:belongsToCourse" ];
+	"Main:Subsections" -> "Main:Assignment" [ label = "Main:isGradedAs" ];
+	"Main:Course" -> "xsd:string" [ label = "Main:name" ];
+	"Main:Course" -> "Main:Staff" [ label = "Main:isSupportedBy" ];
+	"Main:Video" -> "xsd:string" [ label = "Main:transcript" ];
+	"Main:Assignment" -> "xsd:int" [ label = "Main:totalweight" ];
+	"Main:Course" -> "xsd:string" [ label = "Main:courseImage" ];
+	"Main:Sections" -> "Main:Course" [ label = "Main:compose" ];
+	"owl:Thing" -> "Main:Discussion" [ label = "Main:isContainedIn" ];
+	"Main:Problem" -> "xsd:int" [ label = "Main:attempts" ];
+	"Main:Course" -> "xsd:dateTime" [ label = "Main:startDate" ];
+	"Main:Subsections" -> "xsd:dateTime" [ label = "Main:dueDate" ];
+	"Main:Problem" -> "xsd:int" [ label = "Main:weight" ];
+	"Main:Assignment" -> "xsd:int" [ label = "Main:discardedtasks" ];
+	"Main:Student" -> "Main:Course" [ label = "Main:takes" ];
+	"Main:Discussion" -> "xsd:string" [ label = "Main:title" ];
+	"Main:Problem" -> "xsd:boolean" [ label = "Main:answerVisibility" ];
+	"Main:Assignment" -> "xsd:string" [ label = "Main:abbreviation" ];
+	"Main:Course" -> "Main:Material" [ label = "Main:hasMaterial" ];
+	"Main:Problem" -> "xsd:string" [ label = "Main:hint" ];
+	"Main:Video" -> "xsd:anyURI" [ label = "Main:source" ];
+	"Main:Course" -> "xsd:string" [ label = "Main:overwiev" ];
+	"Main:Course" -> "xsd:dateTime" [ label = "Main:endDate" ];
+	"Main:Course" -> "xsd:int" [ label = "Main:hoursPerWeek" ];
+	"Main:Discussion" -> "owl:Thing" [ label = "Main:hasTerm" ];
+	"Main:Course" -> "Main:Teacher" [ label = "Main:isMadeBy" ];
+
+}

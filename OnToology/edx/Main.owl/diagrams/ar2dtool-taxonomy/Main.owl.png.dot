@@ -1,0 +1,26 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "Main:SubjectArea" "Main:Homework" "Main:Wiki" "Main:Person" "Main:Field" "Main:News" "Main:Problem" "Main:Subsections" "Main:Texbook" "Main:Candidate" "Main:Student" "Main:Sections" "Main:Teacher" "Main:Term" "Main:Lab" "Main:Video" "Main:Assignment" "Main:Staff" "Main:UserGrades" "Main:Material" "Main:FinalExam" "Main:Discussion" "Main:HTML" "Main:Units" "Main:MidExam" ; /*classes style*/
+	"Main:MidExam" -> "Main:Assignment" [ label = "rdfs:subClassOf" ];
+	"Main:UserGrades" -> "Main:Assignment" [ label = "rdfs:subClassOf" ];
+	"Main:Wiki" -> "Main:Material" [ label = "rdfs:subClassOf" ];
+	"Main:Term" -> "Main:SubjectArea" [ label = "rdfs:subClassOf" ];
+	"Main:Field" -> "Main:SubjectArea" [ label = "rdfs:subClassOf" ];
+	"Main:Texbook" -> "Main:Material" [ label = "rdfs:subClassOf" ];
+	"Main:Student" -> "Main:Person" [ label = "rdfs:subClassOf" ];
+	"Main:Units" -> "Main:Subsections" [ label = "rdfs:subClassOf" ];
+	"Main:Subsections" -> "Main:Sections" [ label = "rdfs:subClassOf" ];
+	"Main:Candidate" -> "Main:Term" [ label = "rdfs:subClassOf" ];
+	"Main:Lab" -> "Main:Assignment" [ label = "rdfs:subClassOf" ];
+	"Main:Discussion" -> "Main:Units" [ label = "rdfs:subClassOf" ];
+	"Main:HTML" -> "Main:Units" [ label = "rdfs:subClassOf" ];
+	"Main:FinalExam" -> "Main:Assignment" [ label = "rdfs:subClassOf" ];
+	"Main:News" -> "Main:Material" [ label = "rdfs:subClassOf" ];
+	"Main:Homework" -> "Main:Assignment" [ label = "rdfs:subClassOf" ];
+	"Main:Problem" -> "Main:Units" [ label = "rdfs:subClassOf" ];
+	"Main:Video" -> "Main:Units" [ label = "rdfs:subClassOf" ];
+	"Main:Staff" -> "Main:Person" [ label = "rdfs:subClassOf" ];
+	"Main:Teacher" -> "Main:Person" [ label = "rdfs:subClassOf" ];
+
+}
